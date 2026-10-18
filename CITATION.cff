@@ -1,0 +1,35 @@
+# Citation metadata for the CFD loss-rate series (Citation File Format 1.2.0).
+# Zenodo's GitHub integration reads this file when a release is tagged.
+# Data as of 2026-10-06 (7 figures updated 2026-10-13); release 2026-10-13 (provisional). Add the Zenodo DOI under
+# `identifiers` once it is minted (concept DOI, so it always points to the latest version).
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below. Credit TradingLookup and link to https://tradinglookup.com/brokers/cfd-loss-rates/"
+type: dataset
+title: "CFD loss-rate series"
+version: "1.0.0"
+date-released: "2026-10-13"
+authors:
+  - name: "TradingLookup"
+    website: "https://tradinglookup.com"
+    email: "hello@tradinglookup.com"
+license: CC-BY-4.0
+url: "https://tradinglookup.com/brokers/cfd-loss-rates/"
+abstract: >-
+  The share of retail accounts that lose money, as each CFD provider states it in
+  its own regulator-mandated risk warning. 31 providers whose sites were read from
+  the UK on 2026-10-06 (7 figures updated on 2026-10-13 after a re-read in a UK
+  browser), plus 404 archived quarterly figures for 18 providers from 2018-Q3
+  (Wayback Machine). Data as of 2026-10-06; released 2026-10-13. Provisional: an
+  independent automated second read on 2026-10-13 matched 16 of 31 figures; no
+  figure has yet been re-read by a person. Each figure is the firm's own number;
+  it is not adjusted, averaged or used to rank firms.
+  Not investment advice.
+keywords:
+  - CFD
+  - contracts for difference
+  - retail investors
+  - risk warning
+  - loss rate
+  - FCA
+  - ESMA
+  - open data

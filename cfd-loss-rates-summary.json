@@ -1,0 +1,425 @@
+{
+  "title": "CFD loss-rate series",
+  "version": "1.0.0",
+  "as_of": "2026-10-06",
+  "count": 31,
+  "fetched_from": "UK",
+  "regulators": {
+    "BaFin": 1,
+    "CySEC": 6,
+    "FCA": 22,
+    "Not confirmed": 2
+  },
+  "median_pct": 73.46,
+  "mean_pct": 70.4,
+  "min": {
+    "pct": 51.0,
+    "brokers": [
+      "eToro"
+    ]
+  },
+  "max": {
+    "pct": 84.0,
+    "brokers": [
+      "Libertex"
+    ]
+  },
+  "fca_only": {
+    "count": 22,
+    "median_pct": 71.8,
+    "mean_pct": 70.41,
+    "min_pct": 55.0,
+    "max_pct": 78.23
+  },
+  "headline": "On 6 October 2026 (7 figures updated on 13 October 2026), the median CFD provider in our set said 73.46% of its retail accounts lose money, across 31 CFD providers whose sites we read from the UK (range 51% to 84%; the 51% figure is eToro's, whose legal entity we haven't confirmed). Provisional: an independent automated second read on 13 October 2026 matched 16 of 31 figures.",
+  "release_status": "provisional",
+  "second_read": {
+    "date": "2026-10-13",
+    "what": "Independent automated second read of each source page (not a person). Honest user agent, robots.txt respected, no bot-wall bypass.",
+    "fetched_from": "the build environment in the US (Ohio), not the UK",
+    "evidence": "data/raw/evidence-archive/cfd-reread/2026-10-13",
+    "counts": {
+      "match": 16,
+      "changed": 0,
+      "not_found": 5,
+      "blocked": 10,
+      "none": 0
+    },
+    "changed": []
+  },
+  "human_checked": 0,
+  "regulator_source": "Our own list (scripts/cfd_brokers.csv); not yet checked on the FCA, CySEC, BaFin or CBI registers.",
+  "register_checked": 0,
+  "regulator_unconfirmed": [
+    "eToro",
+    "AvaTrade"
+  ],
+  "warning_text_mismatches": [],
+  "change_vs_earliest_history": [
+    {
+      "broker": "eToro",
+      "slug": "etoro",
+      "live_pct": 51.0,
+      "earliest_quarter": "2018-Q4",
+      "earliest_pct": 65.0,
+      "change_points": -14.0,
+      "history_quarters": 14,
+      "history_flags": [
+        "entity unclear"
+      ]
+    },
+    {
+      "broker": "Tickmill",
+      "slug": "tickmill",
+      "live_pct": 68.0,
+      "earliest_quarter": "2019-Q1",
+      "earliest_pct": 81.0,
+      "change_points": -13.0,
+      "history_quarters": 21,
+      "history_flags": []
+    },
+    {
+      "broker": "FXCM UK",
+      "slug": "fxcm-uk",
+      "live_pct": 67.0,
+      "earliest_quarter": "2018-Q3",
+      "earliest_pct": 79.79,
+      "change_points": -12.79,
+      "history_quarters": 32,
+      "history_flags": []
+    },
+    {
+      "broker": "CMC Markets",
+      "slug": "cmc-markets",
+      "live_pct": 69.0,
+      "earliest_quarter": "2018-Q3",
+      "earliest_pct": 78.0,
+      "change_points": -9.0,
+      "history_quarters": 31,
+      "history_flags": []
+    },
+    {
+      "broker": "IG",
+      "slug": "ig",
+      "live_pct": 70.0,
+      "earliest_quarter": "2018-Q3",
+      "earliest_pct": 79.0,
+      "change_points": -9.0,
+      "history_quarters": 32,
+      "history_flags": []
+    },
+    {
+      "broker": "Saxo",
+      "slug": "saxo",
+      "live_pct": 61.0,
+      "earliest_quarter": "2018-Q3",
+      "earliest_pct": 69.0,
+      "change_points": -8.0,
+      "history_quarters": 34,
+      "history_flags": []
+    },
+    {
+      "broker": "Spreadex",
+      "slug": "spreadex",
+      "live_pct": 61.0,
+      "earliest_quarter": "2018-Q3",
+      "earliest_pct": 67.0,
+      "change_points": -6.0,
+      "history_quarters": 33,
+      "history_flags": [
+        "same figure 6 quarters running (page may not have been updated)"
+      ]
+    },
+    {
+      "broker": "AvaTrade",
+      "slug": "avatrade",
+      "live_pct": 65.0,
+      "earliest_quarter": "2018-Q4",
+      "earliest_pct": 71.0,
+      "change_points": -6.0,
+      "history_quarters": 12,
+      "history_flags": [
+        "entity unclear",
+        "same figure 12 quarters running (page may not have been updated)"
+      ]
+    },
+    {
+      "broker": "Forex.com",
+      "slug": "forex-com",
+      "live_pct": 74.0,
+      "earliest_quarter": "2018-Q3",
+      "earliest_pct": 80.0,
+      "change_points": -6.0,
+      "history_quarters": 22,
+      "history_flags": []
+    },
+    {
+      "broker": "Trading 212",
+      "slug": "trading-212",
+      "live_pct": 74.0,
+      "earliest_quarter": "2018-Q3",
+      "earliest_pct": 80.0,
+      "change_points": -6.0,
+      "history_quarters": 13,
+      "history_flags": [
+        "same figure 10 quarters running (page may not have been updated)"
+      ]
+    },
+    {
+      "broker": "XTB",
+      "slug": "xtb",
+      "live_pct": 74.0,
+      "earliest_quarter": "2018-Q3",
+      "earliest_pct": 80.0,
+      "change_points": -6.0,
+      "history_quarters": 33,
+      "history_flags": []
+    },
+    {
+      "broker": "Swissquote",
+      "slug": "swissquote",
+      "live_pct": 78.23,
+      "earliest_quarter": "2025-Q2",
+      "earliest_pct": 82.48,
+      "change_points": -4.25,
+      "history_quarters": 6,
+      "history_flags": []
+    },
+    {
+      "broker": "FxPro",
+      "slug": "fxpro",
+      "live_pct": 75.0,
+      "earliest_quarter": "2018-Q3",
+      "earliest_pct": 79.0,
+      "change_points": -4.0,
+      "history_quarters": 29,
+      "history_flags": [
+        "15 of 29 archived pages show two different figures"
+      ]
+    },
+    {
+      "broker": "Pepperstone",
+      "slug": "pepperstone",
+      "live_pct": 73.6,
+      "earliest_quarter": "2020-Q2",
+      "earliest_pct": 76.5,
+      "change_points": -2.9,
+      "history_quarters": 24,
+      "history_flags": []
+    },
+    {
+      "broker": "IC Markets EU",
+      "slug": "ic-markets-eu",
+      "live_pct": 73.46,
+      "earliest_quarter": "2021-Q2",
+      "earliest_pct": 75.0,
+      "change_points": -1.54,
+      "history_quarters": 23,
+      "history_flags": []
+    },
+    {
+      "broker": "City Index",
+      "slug": "city-index",
+      "live_pct": 68.0,
+      "earliest_quarter": "2022-Q2",
+      "earliest_pct": 69.0,
+      "change_points": -1.0,
+      "history_quarters": 17,
+      "history_flags": []
+    },
+    {
+      "broker": "Plus500",
+      "slug": "plus500",
+      "live_pct": 76.0,
+      "earliest_quarter": "2022-Q1",
+      "earliest_pct": 73.0,
+      "change_points": 3.0,
+      "history_quarters": 8,
+      "history_flags": []
+    },
+    {
+      "broker": "Markets.com",
+      "slug": "markets-com",
+      "live_pct": 81.9,
+      "earliest_quarter": "2020-Q2",
+      "earliest_pct": 74.93,
+      "change_points": 6.97,
+      "history_quarters": 20,
+      "history_flags": []
+    },
+    {
+      "broker": "Darwinex",
+      "slug": "darwinex",
+      "live_pct": 55.0,
+      "earliest_quarter": null,
+      "earliest_pct": null,
+      "change_points": null,
+      "history_quarters": 0,
+      "history_flags": []
+    },
+    {
+      "broker": "Capital.com",
+      "slug": "capital-com",
+      "live_pct": 65.0,
+      "earliest_quarter": null,
+      "earliest_pct": null,
+      "change_points": null,
+      "history_quarters": 0,
+      "history_flags": []
+    },
+    {
+      "broker": "FXCM Europe",
+      "slug": "fxcm-europe",
+      "live_pct": 65.0,
+      "earliest_quarter": null,
+      "earliest_pct": null,
+      "change_points": null,
+      "history_quarters": 0,
+      "history_flags": []
+    },
+    {
+      "broker": "Skilling",
+      "slug": "skilling",
+      "live_pct": 65.0,
+      "earliest_quarter": null,
+      "earliest_pct": null,
+      "change_points": null,
+      "history_quarters": 0,
+      "history_flags": []
+    },
+    {
+      "broker": "Axi",
+      "slug": "axi",
+      "live_pct": 67.7,
+      "earliest_quarter": null,
+      "earliest_pct": null,
+      "change_points": null,
+      "history_quarters": 0,
+      "history_flags": []
+    },
+    {
+      "broker": "ActivTrades",
+      "slug": "activtrades",
+      "live_pct": 69.0,
+      "earliest_quarter": null,
+      "earliest_pct": null,
+      "change_points": null,
+      "history_quarters": 0,
+      "history_flags": []
+    },
+    {
+      "broker": "Trade Nation",
+      "slug": "trade-nation",
+      "live_pct": 73.8,
+      "earliest_quarter": null,
+      "earliest_pct": null,
+      "change_points": null,
+      "history_quarters": 0,
+      "history_flags": []
+    },
+    {
+      "broker": "IG EU",
+      "slug": "ig-eu",
+      "live_pct": 74.0,
+      "earliest_quarter": null,
+      "earliest_pct": null,
+      "change_points": null,
+      "history_quarters": 0,
+      "history_flags": []
+    },
+    {
+      "broker": "Pepperstone EU",
+      "slug": "pepperstone-eu",
+      "live_pct": 74.1,
+      "earliest_quarter": null,
+      "earliest_pct": null,
+      "change_points": null,
+      "history_quarters": 0,
+      "history_flags": []
+    },
+    {
+      "broker": "ThinkMarkets",
+      "slug": "thinkmarkets",
+      "live_pct": 75.0,
+      "earliest_quarter": null,
+      "earliest_pct": null,
+      "change_points": null,
+      "history_quarters": 0,
+      "history_flags": []
+    },
+    {
+      "broker": "OANDA",
+      "slug": "oanda",
+      "live_pct": 76.6,
+      "earliest_quarter": null,
+      "earliest_pct": null,
+      "change_points": null,
+      "history_quarters": 0,
+      "history_flags": []
+    },
+    {
+      "broker": "Eightcap",
+      "slug": "eightcap",
+      "live_pct": 78.0,
+      "earliest_quarter": null,
+      "earliest_pct": null,
+      "change_points": null,
+      "history_quarters": 0,
+      "history_flags": []
+    },
+    {
+      "broker": "Libertex",
+      "slug": "libertex",
+      "live_pct": 84.0,
+      "earliest_quarter": null,
+      "earliest_pct": null,
+      "change_points": null,
+      "history_quarters": 0,
+      "history_flags": []
+    }
+  ],
+  "excluded_no_figure": [
+    {
+      "broker": "Admirals",
+      "status": "no_match",
+      "landed_on": "https://www.admiralmarkets.co.uk"
+    },
+    {
+      "broker": "Interactive Brokers",
+      "status": "no_validation",
+      "landed_on": "https://www.interactivebrokers.co.uk"
+    },
+    {
+      "broker": "Vantage",
+      "status": "no_match",
+      "landed_on": "https://www.vantage.com"
+    },
+    {
+      "broker": "XM",
+      "status": "error: Page.goto: Timeout 45000ms exceeded.",
+      "landed_on": "https://www.xm.com/eu"
+    },
+    {
+      "broker": "FP Markets",
+      "status": "no_match",
+      "landed_on": "https://www.fpmarkets.com/au/"
+    },
+    {
+      "broker": "Freedom24",
+      "status": "no_match",
+      "landed_on": "https://freedom24.co.uk"
+    },
+    {
+      "broker": "Hantec Markets",
+      "status": "no_match",
+      "landed_on": "https://www.hantecmarkets.com"
+    }
+  ],
+  "notes": [
+    "Every figure is measured: the broker's own mandated risk warning, read from its website from the UK on the as_of date.",
+    "Change vs earliest history compares today's live figure with the first archived (Wayback) figure; the live page and the archived page are not always the same URL. Brokers with history_flags should not be used in comparisons.",
+    "Figures are trailing 12 months and refreshed quarterly by each firm.",
+    "Regulator comes from our own list of firms, not yet checked on a regulator's register. Where the legal entity is not confirmed, the regulator is 'Not confirmed' and the row is left out of the regulator split and fca_only."
+  ],
+  "licence": "CC-BY-4.0"
+}

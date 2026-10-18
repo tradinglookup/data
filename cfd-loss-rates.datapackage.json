@@ -1,0 +1,291 @@
+{
+  "profile": "tabular-data-package",
+  "name": "cfd-loss-rates",
+  "title": "CFD loss-rate series: share of retail accounts losing money, by provider",
+  "version": "1.0.0",
+  "created": "2026-10-06",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "title": "Creative Commons Attribution 4.0",
+      "path": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Broker websites: mandated retail risk warning (FCA COBS 22.5; ESMA/CySEC product intervention)",
+      "description": "One source URL per row, in the source_url column."
+    },
+    {
+      "title": "Internet Archive Wayback Machine",
+      "path": "https://web.archive.org/"
+    }
+  ],
+  "resources": [
+    {
+      "name": "cfd-loss-rates-live",
+      "path": "cfd-loss-rates.csv",
+      "profile": "tabular-data-resource",
+      "format": "csv",
+      "encoding": "utf-8",
+      "schema": {
+        "primaryKey": [
+          "slug"
+        ],
+        "fields": [
+          {
+            "name": "broker",
+            "type": "string",
+            "description": "Brand name"
+          },
+          {
+            "name": "slug",
+            "type": "string",
+            "description": "URL-safe id"
+          },
+          {
+            "name": "entity",
+            "type": "string",
+            "description": "Legal entity the warning belongs to, as named on the page"
+          },
+          {
+            "name": "loss_rate_pct",
+            "type": "number",
+            "description": "% of retail accounts that lose money, as stated by the firm",
+            "constraints": {
+              "minimum": 0,
+              "maximum": 100
+            }
+          },
+          {
+            "name": "warning_text",
+            "type": "string",
+            "description": "The warning sentence, verbatim"
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Page the warning was read from (after redirects)",
+            "format": "uri"
+          },
+          {
+            "name": "checked_at",
+            "type": "date",
+            "description": "Date the page was read"
+          },
+          {
+            "name": "evidence",
+            "type": "string",
+            "description": "sha256 of the page text plus fetch method and location"
+          },
+          {
+            "name": "second_read",
+            "type": "string",
+            "description": "Independent automated second read of the page (not a person): match, changed, not_found or blocked; empty = not re-read",
+            "constraints": {
+              "enum": [
+                "",
+                "match",
+                "changed",
+                "not_found",
+                "blocked"
+              ]
+            }
+          },
+          {
+            "name": "second_read_at",
+            "type": "string",
+            "description": "Date of the second read, YYYY-MM-DD"
+          },
+          {
+            "name": "second_read_pct",
+            "type": "number",
+            "description": "Figure the second read found (empty unless match or changed). loss_rate_pct is not overwritten; see cfd-loss-rates-observations.csv"
+          },
+          {
+            "name": "second_read_url",
+            "type": "string",
+            "description": "Page the second read landed on (after redirects)"
+          },
+          {
+            "name": "second_read_evidence",
+            "type": "string",
+            "description": "Saved page text / screenshot in our evidence archive, with sha256"
+          },
+          {
+            "name": "second_read_note",
+            "type": "string",
+            "description": "Why a second read did not match, where it needs saying"
+          },
+          {
+            "name": "notes",
+            "type": "string",
+            "description": "Regulator (from our list, not yet register-checked; 'Not confirmed' when the entity is unconfirmed) and caveats"
+          },
+          {
+            "name": "register_url",
+            "type": "string",
+            "description": "Regulator's public register page for the entity, once checked (empty = not register-checked)"
+          },
+          {
+            "name": "register_checked_at",
+            "type": "string",
+            "description": "Date the regulator register was checked, YYYY-MM-DD (empty = not checked)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "cfd-loss-rates-history",
+      "path": "cfd-loss-rates-history.csv",
+      "profile": "tabular-data-resource",
+      "format": "csv",
+      "encoding": "utf-8",
+      "schema": {
+        "primaryKey": [
+          "slug",
+          "quarter"
+        ],
+        "fields": [
+          {
+            "name": "broker",
+            "type": "string",
+            "description": "Brand name"
+          },
+          {
+            "name": "slug",
+            "type": "string",
+            "description": "URL-safe id, joins to the live file"
+          },
+          {
+            "name": "entity",
+            "type": "string",
+            "description": "Today's entity (not read from each archived page)"
+          },
+          {
+            "name": "quarter",
+            "type": "string",
+            "description": "Calendar quarter of the archive capture, YYYY-Qn",
+            "pattern": "^\\d{4}-Q[1-4]$"
+          },
+          {
+            "name": "loss_rate_pct",
+            "type": "number",
+            "description": "% of retail accounts that lose money on the archived page",
+            "constraints": {
+              "minimum": 0,
+              "maximum": 100
+            }
+          },
+          {
+            "name": "archive_url",
+            "type": "string",
+            "description": "Wayback Machine capture",
+            "format": "uri"
+          },
+          {
+            "name": "warning_text",
+            "type": "string",
+            "description": "The warning sentence on the archived page, verbatim"
+          }
+        ]
+      },
+      "foreignKeys": [
+        {
+          "fields": "slug",
+          "reference": {
+            "resource": "cfd-loss-rates-live",
+            "fields": "slug"
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfd-loss-rates-observations",
+      "path": "cfd-loss-rates-observations.csv",
+      "profile": "tabular-data-resource",
+      "format": "csv",
+      "encoding": "utf-8",
+      "schema": {
+        "primaryKey": [
+          "slug",
+          "observed_at",
+          "read_type"
+        ],
+        "fields": [
+          {
+            "name": "broker",
+            "type": "string",
+            "description": "Brand name"
+          },
+          {
+            "name": "slug",
+            "type": "string",
+            "description": "URL-safe id, joins to the live file"
+          },
+          {
+            "name": "observed_at",
+            "type": "date",
+            "description": "Date the page was read"
+          },
+          {
+            "name": "loss_rate_pct",
+            "type": "number",
+            "description": "% of retail accounts that lose money, as read that day",
+            "constraints": {
+              "minimum": 0,
+              "maximum": 100
+            }
+          },
+          {
+            "name": "warning_text",
+            "type": "string",
+            "description": "The warning sentence, verbatim"
+          },
+          {
+            "name": "page_url",
+            "type": "string",
+            "description": "Page read (after redirects)",
+            "format": "uri"
+          },
+          {
+            "name": "read_type",
+            "type": "string",
+            "description": "first_read (the published reading; '(superseded)' when corrected), uk_browser_read (published) for a corrected figure, or second_read (match/changed)"
+          },
+          {
+            "name": "fetch_location",
+            "type": "string",
+            "description": "Where the page was read from"
+          },
+          {
+            "name": "method",
+            "type": "string",
+            "description": "static (plain HTTP) or js/playwright (headless browser)"
+          },
+          {
+            "name": "evidence",
+            "type": "string",
+            "description": "sha256 of the page text and, for second reads, the saved file"
+          }
+        ]
+      },
+      "foreignKeys": [
+        {
+          "fields": "slug",
+          "reference": {
+            "resource": "cfd-loss-rates-live",
+            "fields": "slug"
+          }
+        }
+      ]
+    },
+    {
+      "name": "cfd-loss-rates-summary",
+      "path": "cfd-loss-rates-summary.json",
+      "format": "json",
+      "mediatype": "application/json"
+    }
+  ],
+  "homepage": "https://tradinglookup.com/brokers/cfd-loss-rates/"
+}
